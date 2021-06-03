@@ -1,0 +1,240 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap');
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.main-page {
+  height: 100vh;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  background-color: #ff8a80;
+}
+
+.main-title{
+  text-align: center;
+  font-variant: small-caps;
+  color: #fff;
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+
+  &__item {
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #757575;
+    text-decoration: none;
+    padding: 15px 0;
+  }
+}
+
+.item.active{
+  color: #0d58c8;
+}
+
+.weather-body{
+  display: flex;
+  flex-direction: column;
+}
+
+.search-block{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+
+  &__input{
+    border: 1px solid transparent;
+    outline: none;
+    max-width: 250px;
+    width: 100%;
+    padding-left: 15px;
+    font-size: 18px;
+    border-radius: 3px;
+    border-bottom: 2px solid #fff;
+    background: transparent;
+  }
+
+  &__btn{
+    padding: 10px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    color: #fff;
+    font-size: 18px;
+    font-variant: small-caps;
+    background:#0d58c8;
+    border-radius: 3px;
+
+    &:hover{
+      opacity: 0.8;
+    }
+  }
+}
+
+.city-wrapper{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.card{
+  background: #fff;
+  width: 150px;
+  border-radius: 4px;
+  text-align: center;
+  margin: 0 20px;
+  padding: 10px 0;
+  position: relative;
+
+  &__close{
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    cursor: pointer;
+  }
+  &__close-img{
+    width: 15px;
+    height: 15px;
+  }
+
+  &__name{
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #757575;
+    margin: 0;
+    margin-top: 10px;
+  }
+
+  &__country{
+    color: #0d58c8;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  &__location-icon{
+    color: #757575;
+    animation: locationanimation 2s infinite;
+  }
+
+  &__img{
+    animation: iconanimation 3s infinite;
+    width: 70px;
+  }
+
+  &__temp{
+    font-size: 35px;
+    color: #757575;
+    margin: 0;
+    margin-top: 20px;
+  }
+
+  &__description{
+    color: #757575;
+    margin: 0;
+    font-size: 14px;
+  }
+
+  &__btn{
+    padding: 5px 20px;
+    background: #0d58c8;
+    font-size: 16px;
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-top: 20px;
+
+    &:hover{
+      opacity: 0.8;
+    }
+
+  }
+  &__border{
+    width: 80%;
+    height: 1px;
+    background:#0d58c8;
+    margin: 0 auto;
+  }
+}
+
+
+@keyframes locationanimation{
+  0%{
+    transform: rotate(0deg);
+  }
+  50%{
+    transform: rotate(180deg);
+  }
+  100%{
+    transform:  rotate(360deg);
+  }
+}
+
+@keyframes iconanimation{
+  from{
+    transform: scale(0.5,0.5);
+  }
+  to{
+    transform: scale(1,1);
+  }
+}
+
+.profile{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+
+   &__name{
+     font-size: 40px;
+     color: #fff;
+   }
+
+   &__img{
+     width: 100px;
+     height: auto;
+     margin-bottom: 0;
+   }
+
+
+   &__temp{
+     font-size: 55px;
+     font-weight: 700;
+     color: #fff;
+     margin: 0;
+   }
+
+   &__weather,&__description{
+     font-size: 14px;
+     color: #fff;
+     margin: 0;
+   }
+
+   &__min-max{
+     display: flex;
+     justify-content: space-between;
+     color: #fff;
+     font-size: 14px;
+     align-items: center;
+     width: 180px;
+
+   }
+
+   &__min-max-border{
+     width: 1px;
+     height: 20px;
+     background-color: #fff;
+   }
+}
