@@ -15,7 +15,7 @@ const homeReducer = (state = initialState, action) => {
       copy.cities = [...state.cities];
       copy.cities.push(action.city);
       copy.inputText = "";
-      if (copy.cities.length > 3) {
+      if (copy.cities.length > 5) {
         alert("нельзя вывес больше трех городов за раз");
         copy.cities = [];
       }

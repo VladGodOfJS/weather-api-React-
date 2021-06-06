@@ -4,6 +4,7 @@ import { updateText,isPreloader,closeCard } from "../redux/home-reducer";
 import React from 'react';
 import Preloader from './common/Preloader';
 import {getCityWeatherThunkCreator} from '../redux/home-reducer';
+import { compose } from "redux";
 
 
 class WeatherContainer extends React.Component {
@@ -34,5 +35,10 @@ let mapStateToProps = (state) => {
     preloader:state.homePage.preloader,
   };
 };
-export default connect(mapStateToProps, { updateText,isPreloader,closeCard,getCityWeatherThunkCreator })(WeatherContainer);
+
+export default compose(
+  connect(mapStateToProps, { updateText,isPreloader,closeCard,getCityWeatherThunkCreator })
+)
+(WeatherContainer)
+
 

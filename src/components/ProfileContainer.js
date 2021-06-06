@@ -3,6 +3,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getCityProfileThunkCreator } from '../redux/profile-reducer';
 import { withRouter } from 'react-router-dom';
+import { compose } from "redux";
+
 
 
 class ProfileContainer extends React.Component{
@@ -30,5 +32,8 @@ let mapStateToProps=(state)=>{
     }
 }
 
- let WithUrlDataContainerComponent= withRouter(ProfileContainer);
- export default connect(mapStateToProps,{getCityProfileThunkCreator})(WithUrlDataContainerComponent)
+export default compose(
+    connect(mapStateToProps,{getCityProfileThunkCreator}),
+    withRouter
+  )
+  (ProfileContainer)
